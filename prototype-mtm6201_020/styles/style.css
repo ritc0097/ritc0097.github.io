@@ -1,0 +1,415 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/***********************
+    End of CSS reset 
+************************/ 
+
+/** I decided to keep the rest of the headers (about page, and contact page) static and unanimated so that it doesn't draw the attention away from the users **/
+.site-header{
+    font-family: 'Pacifico', cursive;
+    font-size: 70px;
+    margin: 25px;
+}
+
+body{
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    
+    overflow: hidden;
+    font-family: 'Pacifico', cursive;
+    font-size: 70px;
+  }
+  
+.letter:nth-child(1){
+    position: relative;
+    padding: 0 2px;
+    margin-top: -10px;
+    animation: drop 1.0s 1s ease-out forwards;
+}
+/** After browing the @IMD codepen, I came accross the animated logo and wanted to add this to my website.
+I changed the speed and rotation of the letters to make the animation feel more calm **/
+@keyframes drop{
+    0%, 20%, 40% {transform: rotate(-15deg)}
+    10%, 30%, 50% {transform: rotate(15deg)}
+    70%, 80% {transform: rotate(0deg) scale(0.8, 1.2);}
+    100% {transform: rotate(0deg) scale(1); margin-top: 0;}
+}
+.letter:nth-child(2), .letter:nth-child(3), .letter:nth-child(4){
+    transform: rotateY(180deg);
+} 
+.letter:nth-child(2){
+    animation: spin 0.5s 2.0s forwards
+}  
+.letter:nth-child(3){
+    animation: spin 0.5s 2.2s forwards
+} 
+.letter:nth-child(4){
+    animation: spin 0.5s 2.4s forwards
+} 
+@keyframes spin{
+    0% {transform: rotateY(180deg)}
+    100%{transform: rotateY(0deg)}
+} 
+.letter:nth-child(5), .letter:nth-child(6), .letter:nth-child(7){
+    transform: rotateX(360deg);
+    animation: flip 1.3s 2s forwards;
+}
+@keyframes flip{
+    0% {transform: rotateX(540deg)}
+    100%{transform: rotateX(0deg)}
+}
+.letter:nth-child(10){
+    animation: spin 0.5s 3.0s backwards
+}
+.letter:nth-child(11){
+    animation: spin 0.5s 3.1s backwards
+}
+@keyframes move{
+    0% {transform: translate(205px, 0)}
+    100% {transform: translate(0px, 0);}
+}
+
+  
+/* Toggle Menu */
+a{
+    color:rgb(105, 141, 167);
+    font-family: 'Nunito', sans-serif;
+    text-decoration: none;
+    font-size: 20px;
+}
+label{
+    cursor: pointer;
+    height: 20px;
+    width: 800px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+/** I wanted to male sure that users knew when they were hovering over a clickable item,
+so I added a different colour, so that when they hovef over the word, they know to click on that item to go to a seperate page **/
+a:hover{
+    text-decoration: underline;
+    color: rgb(212, 94, 51);
+}
+#menu-toggle{
+    display: none;
+}
+#menu{
+    background-color: rgb(241, 246, 255);
+    overflow: hidden;
+    max-height: 0;
+    padding: 0;
+    margin: 0 auto;
+    position: absolute;
+    transition: all 0.3s ease;
+    height: calc(100vh - 130px);
+    display: flex;
+    flex-flow: column;
+    width: 100%;;
+}
+
+#menu-toggle:checked + #menu{
+    max-height: 1000px;
+}
+ul#menu li{
+    flex: 1;
+    border-top: 3px solid rgb(70, 148, 211);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section{
+  display: block;
+  height: 6em;
+}
+
+ /* Home Page */
+body{
+    box-sizing: border-box;
+}
+.column{
+    float: left;
+    padding: 10px;
+}
+.column.side{
+    width: 22%;
+}
+.column.middle{
+    width: 50%;
+}
+  
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+img{
+    max-width: 100%;
+}
+h2{
+    font-family: 'Lilita One', cursive;
+    font-size: 25px;
+    color:rgb(212, 94, 51)
+}
+p{
+    margin: 10px;
+}
+  
+.footer{
+    background-color:rgb(202, 216, 228);
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Buttons */
+.boxes{
+    padding: 20px;
+    position: relative;
+}
+.boxes div{
+    width: 50%;
+    max-width: 100%;
+    float: left;
+}
+.abt{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #A68F81;
+    color: white;
+    font-size: 15px;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+/** I attemtpted to add an animation to the buttons so that they enlarge when hovered over.
+After doing so, I noticed that the buttons change positions after being hovered over. I was unsure how to fix this issue so decided to scale them large enough so it will not affect the users click **/
+.abt:hover, .cnt:hover{
+    background-color:#171F26;
+    transform: scale(1.3);
+}
+
+.cnt{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #A68F81;
+    color: white;
+    font-size: 15px;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    max-width: 100%;
+}
+
+/* Table Styles */
+table{
+    margin: 20px 0;
+    border: 1px solid;
+    width: 100%;
+}
+th,
+td{
+    border: 1px solid;
+    padding: 10px 20px;
+}
+tbody tr:nth-child(even){
+    background-color: rgb(243, 233, 231);
+}
+
+/* Contact Form */
+.form-wrap{
+    padding: 20px;
+    text-align:left;
+    background-color: rgb(230, 246, 255);
+    height: 420px;
+    box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.6);
+
+
+    animation-name: drop-in, tada;
+    animation-duration: 1s, 1.5s;
+    animation-delay:  0s, 1s;
+}
+
+/** In the eyes of a businnes person, companies are always looking for feedback on their brand and encourages clients to send emails for recommendations, etc. 
+
+I decided to add an animation to the contact form to grab the attention of the client and encourage them to contact the business with their thoughts. **/
+@keyframes drop-in {
+  0% { transform: translate(-200px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes tada {
+  0% { transform: scale(1) rotate(0); }
+  10% { transform: scale(0.8) rotate(0); }
+  15% { transform: scale(1) rotate(0); }
+  20% { transform: scale(1) rotate(-5deg);}
+  25% { transform: scale(1) rotate(5deg);}
+  30% { transform: scale(1) rotate(-5deg);}
+  35% { transform: scale(1) rotate(5deg);}
+  40% { transform: scale(1) rotate(0deg);}
+}
+
+textarea,
+input{
+    display: block;
+    width: 100%;
+    padding: 5px;
+    font-size: 1.15rem;
+    border: 1px solid black;
+    background:rgb(251, 254, 255);
+}
+textarea{
+    resize: none;
+    height: 5rem;
+}
+button{
+    background-color: #F39624;
+    padding: 10px 20px;
+    color: black;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    cursor: pointer;
+}
+button:disabled{
+    background-color: rgb(219, 219, 219);
+    cursor: unset;
+}
+/* Map */
+iframe{
+    max-width: 100%;
+}
+
+.gotopbtn{
+     position: fixed;
+     bottom: 40px;
+     right: 50px;
+     text-decoration: none;
+     text-align: center;
+     line-height: 50px;
+     color:#171F26;
+     font-size: 22px;
+}
+
+/* Hide Icon in Web view */
+
+/* I decided to add a hamburger menu to my website to add more space in the mobile view */
+
+@media screen and (min-width:520px){
+    label{
+        display: none;
+    }
+
+    #menu {
+        max-height: 1000px;
+        flex-flow: row;
+        position: static;
+        width: 100%;
+        height:50px;
+        transition: none;
+    }
+    .content-clearfix{
+        font-size: 1rem;
+        max-width: 50%;
+        margin: 0 auto;
+        display: grid;        
+        grid-template-columns: 1fr 1fr;
+    }
+    .first{
+        grid-column: 1/3;
+        grid-row: 1/2;
+    }
+    .second{
+        grid-column: 1/2;
+        grid-row: 2/3;
+        padding: 10px 10px 10px 0;
+    }
+  
+    input,
+    textarea{
+        display: inline-block;
+        max-width: 60%;
+    }
+    .clearfix-content{
+        display: grid;        
+        grid-template-columns: 1fr 1fr;
+    }
+    .form-wrap{
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+    .map{
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+}
+  
+@media screen and (max-width: 1000px) {
+    .column.side, .column.middle {
+      width: 100%;
+    }
+    .boxes div{
+        width: 100%;
+    }
+    .abt{
+      top: 550%;
+      left: 50%;
+  }
+}
